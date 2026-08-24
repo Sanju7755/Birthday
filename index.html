@@ -4,311 +4,446 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#7c3aed">
-<meta property="og:title" content="A Very Important Message For Sindhu Akka 👀">
-<meta property="og:description" content="Sindhu has been selected for a highly important birthday investigation. 🎂😂">
+
+<meta property="og:title" content="A Very Important Message For Sindhu Akka👀">
+<meta property="og:description" content="Sindhu Akka has been selected for a highly important birthday investigation. 🎂😂">
 <meta property="og:type" content="website">
+
 <meta name="description" content="A funny interactive birthday surprise for Sindhu Akka.">
-<title>For Sindhu Akka 👀</title>
+
+<title>For Sindhu Akka👀</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-body{
-    min-height:100vh;
-    font-family:"DM Sans",sans-serif;
-    color:#241b35;
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    color: #241b35;
     background:
-        radial-gradient(circle at 10% 10%,#ffd8e8 0,transparent 30%),
-        radial-gradient(circle at 90% 20%,#ddd2ff 0,transparent 30%),
-        linear-gradient(135deg,#fff8fb,#f5f0ff);
-    overflow-x:hidden;
+        radial-gradient(circle at 10% 10%, #ffd8e8 0, transparent 30%),
+        radial-gradient(circle at 90% 20%, #ddd2ff 0, transparent 30%),
+        linear-gradient(135deg, #fff8fb, #f5f0ff);
+    overflow-x: hidden;
 }
 
-button{font-family:inherit}
-
-.background-blob{
-    position:fixed;
-    border-radius:50%;
-    pointer-events:none;
-    filter:blur(5px);
-    opacity:.55;
-    z-index:0
+button {
+    font-family: inherit;
 }
 
-.blob-one{
-    width:180px;height:180px;
-    background:#ffc9df;
-    top:10%;left:-70px;
-    animation:floatingBlob 8s ease-in-out infinite
+.background-blob {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(5px);
+    opacity: .55;
+    z-index: 0;
 }
 
-.blob-two{
-    width:220px;height:220px;
-    background:#d9ccff;
-    right:-100px;bottom:5%;
-    animation:floatingBlob 10s ease-in-out infinite reverse
+.blob-one {
+    width: 180px;
+    height: 180px;
+    background: #ffc9df;
+    top: 10%;
+    left: -70px;
+    animation: floatingBlob 8s ease-in-out infinite;
 }
 
-@keyframes floatingBlob{
-    50%{transform:translateY(-25px) rotate(10deg)}
+.blob-two {
+    width: 220px;
+    height: 220px;
+    background: #d9ccff;
+    right: -100px;
+    bottom: 5%;
+    animation: floatingBlob 10s ease-in-out infinite reverse;
 }
 
-.app{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
-    position:relative;
-    z-index:2
-}
-
-.card{
-    width:min(620px,100%);
-    padding:30px 25px;
-    border-radius:32px;
-    background:rgba(255,255,255,.78);
-    border:1px solid rgba(255,255,255,.9);
-    backdrop-filter:blur(20px);
-    box-shadow:0 30px 80px rgba(66,36,100,.15);
-    position:relative;
-    z-index:5
-}
-
-.top-bar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    min-height:35px;
-    margin-bottom:10px
-}
-
-.progress{
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    color:#7b7088
-}
-
-.sound-button{
-    border:none;
-    background:white;
-    width:40px;height:40px;
-    border-radius:50%;
-    cursor:pointer;
-    box-shadow:0 7px 20px rgba(0,0,0,.08);
-    font-size:18px
-}
-
-.screen{
-    text-align:center;
-    animation:screenEnter .45s ease
-}
-
-@keyframes screenEnter{
-    from{opacity:0;transform:translateY(18px) scale(.98)}
-    to{opacity:1;transform:translateY(0) scale(1)}
-}
-
-.emoji{
-    font-size:65px;
-    margin:10px 0 20px;
-    line-height:1;
-    filter:drop-shadow(0 10px 12px rgba(0,0,0,.12))
-}
-
-h1{
-    font-family:"Pacifico",cursive;
-    color:#6d28d9;
-    font-size:clamp(38px,10vw,60px);
-    line-height:1.1;
-    margin-bottom:15px
-}
-
-h2{
-    font-size:clamp(26px,7vw,40px);
-    line-height:1.15;
-    margin-bottom:14px
-}
-
-p{
-    max-width:510px;
-    margin:8px auto;
-    color:#756a83;
-    font-size:17px;
-    line-height:1.6
-}
-
-.buttons{
-    display:grid;
-    gap:12px;
-    margin-top:25px
-}
-
-.button{
-    border:none;
-    border-radius:17px;
-    padding:16px 18px;
-    font-size:16px;
-    font-weight:800;
-    color:white;
-    cursor:pointer;
-    background:linear-gradient(135deg,#7c3aed,#ec4899);
-    box-shadow:0 12px 25px rgba(124,58,237,.22);
-    transition:transform .18s ease,box-shadow .18s ease
-}
-
-.button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 18px 30px rgba(124,58,237,.28)
-}
-
-.button:active{transform:scale(.97)}
-
-.button.secondary{
-    color:#30263c;
-    background:white;
-    box-shadow:0 8px 20px rgba(0,0,0,.07)
-}
-
-.choice-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:25px
-}
-
-.choice-grid .button{min-height:75px}
-
-.tiny{
-    margin-top:18px;
-    color:#8c8196;
-    font-size:13px
-}
-
-.loader{
-    width:75px;height:75px;
-    margin:25px auto;
-    border-radius:50%;
-    border:7px solid #eadfff;
-    border-top-color:#7c3aed;
-    animation:spin .8s linear infinite
-}
-
-@keyframes spin{
-    to{transform:rotate(360deg)}
-}
-
-.wish-card{
-    margin-top:20px;
-    padding:24px;
-    text-align:left;
-    border-radius:25px;
-    background:rgba(255,255,255,.7);
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)
-}
-
-.wish-card p{
-    font-size:16px;
-    margin-bottom:14px
-}
-
-.heart{
-    font-size:50px;
-    animation:heartbeat 1s ease-in-out infinite alternate
-}
-
-@keyframes heartbeat{
-    to{transform:scale(1.15)}
-}
-
-/* FINAL PHOTO */
-.final-photo{
-    width:100%;
-    max-width:420px;
-    height:420px;
-    object-fit:cover;
-    border-radius:28px;
-    margin:20px auto;
-    display:block;
-    border:6px solid rgba(255,255,255,.9);
-    box-shadow:0 20px 50px rgba(80,40,120,.22);
-    animation:photoReveal .9s ease both
-}
-
-@keyframes photoReveal{
-    from{
-        opacity:0;
-        transform:scale(.75) rotate(-3deg)
-    }
-    to{
-        opacity:1;
-        transform:scale(1) rotate(0)
+@keyframes floatingBlob {
+    50% {
+        transform: translateY(-25px) rotate(10deg);
     }
 }
 
-/* CONFETTI */
-#confetti-container{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:100
+.app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    position: relative;
+    z-index: 2;
 }
 
-.confetti{
-    position:absolute;
-    width:9px;
-    height:15px;
-    top:-30px;
-    animation:confettiFall linear forwards
+.card {
+    width: min(620px, 100%);
+    padding: 30px 25px;
+    border-radius: 32px;
+    background: rgba(255,255,255,.78);
+    border: 1px solid rgba(255,255,255,.9);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 80px rgba(66,36,100,.15);
+    position: relative;
+    z-index: 5;
 }
 
-@keyframes confettiFall{
-    to{
-        transform:translate3d(var(--moveX),110vh,0) rotate(720deg);
-        opacity:0
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 35px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #7b7088;
+}
+
+.sound-button {
+    border: none;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 7px 20px rgba(0,0,0,.08);
+    font-size: 18px;
+}
+
+.screen {
+    text-align: center;
+    animation: screenEnter .45s ease;
+}
+
+@keyframes screenEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-/* FLOATING EMOJIS */
-.floating-emoji{
-    position:fixed;
-    bottom:-40px;
-    font-size:28px;
-    z-index:1;
-    pointer-events:none;
-    animation:emojiRise 7s linear forwards
+.emoji {
+    font-size: 65px;
+    margin: 10px 0 20px;
+    line-height: 1;
+    filter: drop-shadow(0 10px 12px rgba(0,0,0,.12));
 }
 
-@keyframes emojiRise{
-    to{
-        transform:translateY(-115vh) rotate(360deg);
-        opacity:0
+h1 {
+    font-family: "Pacifico", cursive;
+    color: #6d28d9;
+    font-size: clamp(38px, 10vw, 60px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(26px, 7vw, 40px);
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+p {
+    max-width: 510px;
+    margin: 8px auto;
+    color: #756a83;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button {
+    border: none;
+    border-radius: 17px;
+    padding: 16px 18px;
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(135deg,#7c3aed,#ec4899);
+    box-shadow: 0 12px 25px rgba(124,58,237,.22);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(124,58,237,.28);
+}
+
+.button:active {
+    transform: scale(.97);
+}
+
+.button.secondary {
+    color: #30263c;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,.07);
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.choice-grid .button {
+    min-height: 75px;
+}
+
+.tiny {
+    margin-top: 18px;
+    color: #8c8196;
+    font-size: 13px;
+}
+
+.loader {
+    width: 75px;
+    height: 75px;
+    margin: 25px auto;
+    border-radius: 50%;
+    border: 7px solid #eadfff;
+    border-top-color: #7c3aed;
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 
-/* SHAKE */
-.shake{animation:shake .4s ease}
-
-@keyframes shake{
-    25%{transform:translateX(-6px)}
-    50%{transform:translateX(6px)}
-    75%{transform:translateX(-4px)}
-    100%{transform:translateX(0)}
+.wish-card {
+    margin-top: 20px;
+    padding: 24px;
+    text-align: left;
+    border-radius: 25px;
+    background: rgba(255,255,255,.7);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.7);
 }
 
-@media(max-width:450px){
-    .app{padding:15px}
-    .card{padding:25px 18px;border-radius:27px}
-    .emoji{font-size:55px}
-    p{font-size:16px}
-    .choice-grid{grid-template-columns:1fr}
-    .final-photo{height:350px}
+.wish-card p {
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.heart {
+    font-size: 50px;
+    animation: heartbeat 1s ease-in-out infinite alternate;
+}
+
+@keyframes heartbeat {
+    to {
+        transform: scale(1.15);
+    }
+}
+
+/* =========================
+   FINAL PHOTO SLIDESHOW
+========================= */
+
+.slideshow {
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.final-photo {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 28px;
+    display: block;
+    border: 6px solid rgba(255,255,255,.9);
+    box-shadow: 0 20px 50px rgba(80,40,120,.22);
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+    animation: photoReveal .9s ease both;
+}
+
+.slide-fade {
+    opacity: 0;
+    transform: scale(.96);
+}
+
+@keyframes photoReveal {
+    from {
+        opacity: 0;
+        transform: scale(.75) rotate(-3deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.slide-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.slide-arrow {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: #6d28d9;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 20px rgba(0,0,0,.08);
+    transition: transform .2s ease;
+}
+
+.slide-arrow:hover {
+    transform: scale(1.08);
+}
+
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.slide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d8cde5;
+    transition: all .3s ease;
+}
+
+.slide-dot.active {
+    width: 24px;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#7c3aed,#ec4899);
+}
+
+.slide-counter {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #8c8196;
+    font-weight: 700;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.confetti {
+    position: absolute;
+    width: 9px;
+    height: 15px;
+    top: -30px;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform:
+            translate3d(var(--moveX),110vh,0)
+            rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   FLOATING EMOJIS
+========================= */
+
+.floating-emoji {
+    position: fixed;
+    bottom: -40px;
+    font-size: 28px;
+    z-index: 1;
+    pointer-events: none;
+    animation: emojiRise 7s linear forwards;
+}
+
+@keyframes emojiRise {
+    to {
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   SHAKE
+========================= */
+
+.shake {
+    animation: shake .4s ease;
+}
+
+@keyframes shake {
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+@media(max-width:450px) {
+
+    .app {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 25px 18px;
+        border-radius: 27px;
+    }
+
+    .emoji {
+        font-size: 55px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .final-photo {
+        height: 350px;
+    }
 }
 </style>
 </head>
@@ -319,31 +454,43 @@ p{
 <div class="background-blob blob-two"></div>
 
 <div class="app">
+
     <main class="card" id="card">
 
         <div class="top-bar">
-            <div class="progress" id="progress"></div>
+
+            <div
+                class="progress"
+                id="progress">
+            </div>
 
             <button
                 class="sound-button"
                 id="soundButton"
                 onclick="toggleSound()">
+
                 🔇
+
             </button>
+
         </div>
 
-        <section class="screen" id="screen"></section>
+        <section
+            class="screen"
+            id="screen">
+        </section>
 
     </main>
+
 </div>
 
 <div id="confetti-container"></div>
 
 <script>
 
-/* =========================
+/* ==================================================
    GLOBALS
-========================= */
+================================================== */
 
 const screen = document.getElementById("screen");
 const progress = document.getElementById("progress");
@@ -353,10 +500,27 @@ const soundButton = document.getElementById("soundButton");
 let soundEnabled = false;
 let audioContext = null;
 
+let currentPhoto = 0;
+let slideshowTimer = null;
 
-/* =========================
-   SCREEN RENDER
-========================= */
+
+/* ==================================================
+   YOUR BIRTHDAY PHOTOS
+   Add/remove filenames here.
+================================================== */
+
+const birthdayPhotos = [
+    "Akka.jpeg",
+    "Akka2.jpeg",
+    "Akka4.jpeg",
+    "Akka1.jpeg",
+    "Akka3.jpeg"
+];
+
+
+/* ==================================================
+   RENDER
+================================================== */
 
 function render(content, progressText = "") {
 
@@ -372,9 +536,9 @@ function render(content, progressText = "") {
 }
 
 
-/* =========================
+/* ==================================================
    FLOATING EMOJIS
-========================= */
+================================================== */
 
 const floatingEmojis = [
     "✨",
@@ -415,9 +579,9 @@ function createFloatingEmoji() {
 setInterval(createFloatingEmoji, 2200);
 
 
-/* =========================
+/* ==================================================
    OPENING
-========================= */
+================================================== */
 
 function opening() {
 
@@ -457,9 +621,9 @@ function opening() {
 }
 
 
-/* =========================
+/* ==================================================
    INTRO
-========================= */
+================================================== */
 
 function intro() {
 
@@ -495,9 +659,9 @@ function intro() {
 }
 
 
-/* =========================
+/* ==================================================
    CHALLENGE 1
-========================= */
+================================================== */
 
 function challengeOne() {
 
@@ -585,9 +749,9 @@ function suspenseAnswer(message) {
 }
 
 
-/* =========================
+/* ==================================================
    CHALLENGE 2
-========================= */
+================================================== */
 
 function challengeTwo() {
 
@@ -624,9 +788,9 @@ function challengeTwo() {
 }
 
 
-/* =========================
+/* ==================================================
    FAKE WISH
-========================= */
+================================================== */
 
 function fakeWish() {
 
@@ -649,7 +813,6 @@ function fakeWish() {
 
     `, "Challenge 2 / 5");
 
-
     const messages = [
 
         "Preparing your special birthday wish...",
@@ -666,9 +829,7 @@ function fakeWish() {
     const interval = setInterval(() => {
 
         const text =
-            document.getElementById(
-                "loadingText"
-            );
+            document.getElementById("loadingText");
 
         if (!text) {
             clearInterval(interval);
@@ -729,9 +890,9 @@ function fakeWishResult() {
 }
 
 
-/* =========================
+/* ==================================================
    CHALLENGE 3
-========================= */
+================================================== */
 
 function challengeThree() {
 
@@ -825,9 +986,9 @@ function giftAnswer() {
 }
 
 
-/* =========================
+/* ==================================================
    CHALLENGE 4
-========================= */
+================================================== */
 
 function challengeFour() {
 
@@ -916,9 +1077,9 @@ function siblingAnswer(answer) {
 }
 
 
-/* =========================
+/* ==================================================
    CHALLENGE 5
-========================= */
+================================================== */
 
 function challengeFive() {
 
@@ -961,9 +1122,9 @@ function challengeFive() {
 }
 
 
-/* =========================
-   FINAL FAKEOUT
-========================= */
+/* ==================================================
+   FINAL FAKEOUTS
+================================================== */
 
 function fakeoutOne() {
 
@@ -1079,9 +1240,9 @@ function waitMore() {
 }
 
 
-/* =========================
+/* ==================================================
    FINAL BIRTHDAY REVEAL
-========================= */
+================================================== */
 
 function revealBirthday() {
 
@@ -1096,27 +1257,47 @@ function revealBirthday() {
             SINDHU AKKA! ❤️
         </h1>
 
-        <!--
-            IMPORTANT:
-            Put your photo here:
-            Akka.jpeg
-        -->
+        <div class="slideshow">
 
-        <img
-            src="Akka.jpeg"
-            alt="Birthday memory of Sindhu Akka"
-            class="final-photo"
-            onerror="this.style.display='none'; document.getElementById('photoError').style.display='block';"
-        >
+            <img
+                id="slideshowImage"
+                class="final-photo"
+                src="${birthdayPhotos[0]}"
+                alt="Birthday memory of Sindhu Akka"
+            >
 
-        <div
-            id="photoError"
-            class="tiny"
-            style="display:none">
+            <div class="slide-controls">
 
-            📸 Add your photo as
-            <b>Akka.jpeg</b>
-            to show it here.
+                <button
+                    class="slide-arrow"
+                    onclick="previousPhoto()"
+                    aria-label="Previous photo">
+
+                    ‹
+
+                </button>
+
+                <div
+                    class="slide-dots"
+                    id="slideDots">
+                </div>
+
+                <button
+                    class="slide-arrow"
+                    onclick="nextPhoto()"
+                    aria-label="Next photo">
+
+                    ›
+
+                </button>
+
+            </div>
+
+            <div
+                class="slide-counter"
+                id="slideCounter">
+                1 / ${birthdayPhotos.length}
+            </div>
 
         </div>
 
@@ -1141,11 +1322,12 @@ function revealBirthday() {
 
             <p>
                 Sorry for irritating you,
-                annoying you, all the time. 
+                annoying you, and pulling your
+                leg all the time. 😅
             </p>
 
             <p>
-                No matter how much I annoy you,
+                No matter how much I tease you,
                 you're always special to me.
             </p>
 
@@ -1210,6 +1392,9 @@ function revealBirthday() {
 
     `, "MISSION COMPLETE");
 
+    createSlideDots();
+    startSlideshow();
+
     launchConfetti(150);
 
     playSound(660);
@@ -1220,9 +1405,186 @@ function revealBirthday() {
 }
 
 
-/* =========================
+/* ==================================================
+   CREATE SLIDE DOTS
+================================================== */
+
+function createSlideDots() {
+
+    const dots =
+        document.getElementById("slideDots");
+
+    if (!dots) return;
+
+    dots.innerHTML = "";
+
+    birthdayPhotos.forEach((photo, index) => {
+
+        const dot =
+            document.createElement("div");
+
+        dot.className = "slide-dot";
+
+        if (index === currentPhoto) {
+            dot.classList.add("active");
+        }
+
+        dots.appendChild(dot);
+    });
+}
+
+
+/* ==================================================
+   UPDATE PHOTO
+================================================== */
+
+function showPhoto(index) {
+
+    const image =
+        document.getElementById("slideshowImage");
+
+    if (!image) return;
+
+    currentPhoto =
+        (index + birthdayPhotos.length)
+        % birthdayPhotos.length;
+
+    image.classList.add("slide-fade");
+
+    setTimeout(() => {
+
+        image.src =
+            birthdayPhotos[currentPhoto];
+
+        image.onload = () => {
+
+            image.classList.remove(
+                "slide-fade"
+            );
+        };
+
+        const dots =
+            document.querySelectorAll(
+                ".slide-dot"
+            );
+
+        dots.forEach(dot => {
+            dot.classList.remove("active");
+        });
+
+        if (dots[currentPhoto]) {
+            dots[currentPhoto]
+                .classList.add("active");
+        }
+
+        const counter =
+            document.getElementById(
+                "slideCounter"
+            );
+
+        if (counter) {
+            counter.textContent =
+                `${currentPhoto + 1} / ${birthdayPhotos.length}`;
+        }
+
+    }, 350);
+}
+
+
+/* ==================================================
+   NEXT / PREVIOUS
+================================================== */
+
+function nextPhoto() {
+
+    showPhoto(currentPhoto + 1);
+
+    restartSlideshowTimer();
+}
+
+function previousPhoto() {
+
+    showPhoto(currentPhoto - 1);
+
+    restartSlideshowTimer();
+}
+
+
+/* ==================================================
+   AUTO SLIDESHOW
+   Changes every 3 seconds.
+================================================== */
+
+function startSlideshow() {
+
+    clearInterval(slideshowTimer);
+
+    slideshowTimer =
+        setInterval(() => {
+
+            showPhoto(currentPhoto + 1);
+
+        }, 3000);
+}
+
+
+function restartSlideshowTimer() {
+
+    clearInterval(slideshowTimer);
+
+    startSlideshow();
+}
+
+
+/* ==================================================
+   SWIPE SUPPORT FOR MOBILE
+================================================== */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener("touchstart", event => {
+
+    if (
+        !document.getElementById(
+            "slideshowImage"
+        )
+    ) return;
+
+    touchStartX =
+        event.changedTouches[0].screenX;
+
+}, { passive: true });
+
+
+document.addEventListener("touchend", event => {
+
+    if (
+        !document.getElementById(
+            "slideshowImage"
+        )
+    ) return;
+
+    touchEndX =
+        event.changedTouches[0].screenX;
+
+    const difference =
+        touchStartX - touchEndX;
+
+    if (Math.abs(difference) < 50) return;
+
+    if (difference > 0) {
+        nextPhoto();
+    } else {
+        previousPhoto();
+    }
+
+}, { passive: true });
+
+
+/* ==================================================
    CELEBRATE
-========================= */
+================================================== */
 
 function celebrate() {
 
@@ -1249,9 +1611,9 @@ function celebrate() {
 }
 
 
-/* =========================
+/* ==================================================
    CONFETTI
-========================= */
+================================================== */
 
 function launchConfetti(amount) {
 
@@ -1302,9 +1664,9 @@ function launchConfetti(amount) {
 }
 
 
-/* =========================
+/* ==================================================
    SOUND
-========================= */
+================================================== */
 
 function toggleSound() {
 
@@ -1372,18 +1734,21 @@ function playSound(frequency) {
 }
 
 
-/* =========================
+/* ==================================================
    REPLAY
-========================= */
+================================================== */
 
 function restart() {
+
+    clearInterval(slideshowTimer);
+
     location.reload();
 }
 
 
-/* =========================
+/* ==================================================
    START
-========================= */
+================================================== */
 
 opening();
 
