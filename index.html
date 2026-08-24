@@ -1,1974 +1,1392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-    <meta name="theme-color" content="#7c3aed">
-
-    <!-- Social Media Preview -->
-    <meta property="og:title"
-          content="A Very Important Message For Sindhu Akka 👀">
-
-    <meta property="og:description"
-          content="Sindhu Akka has been selected for a highly important birthday investigation. 🎂😂">
-
-    <meta property="og:type" content="website">
-
-    <meta name="description"
-          content="A funny interactive birthday surprise for Sindhu.">
-
-    <title>For Sindhu Akka 👀</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap"
-          rel="stylesheet">
-
-    <style>
-
-        /* ================================
-           GLOBAL
-        ================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: "DM Sans", sans-serif;
-            color: #241b35;
-
-            background:
-                radial-gradient(
-                    circle at 10% 10%,
-                    #ffd8e8 0%,
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 90% 20%,
-                    #ddd2ff 0%,
-                    transparent 30%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #fff8fb,
-                    #f5f0ff
-                );
-
-            overflow-x: hidden;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-
-        /* ================================
-           BACKGROUND
-        ================================= */
-
-        .background-blob {
-            position: fixed;
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(5px);
-            opacity: 0.55;
-            z-index: 0;
-        }
-
-        .blob-one {
-            width: 180px;
-            height: 180px;
-            background: #ffc9df;
-            top: 10%;
-            left: -70px;
-
-            animation: floatingBlob 8s ease-in-out infinite;
-        }
-
-        .blob-two {
-            width: 220px;
-            height: 220px;
-            background: #d9ccff;
-            right: -100px;
-            bottom: 5%;
-
-            animation:
-                floatingBlob 10s ease-in-out infinite reverse;
-        }
-
-        @keyframes floatingBlob {
-
-            50% {
-                transform:
-                    translateY(-25px)
-                    rotate(10deg);
-            }
-
-        }
-
-
-        /* ================================
-           MAIN CONTAINER
-        ================================= */
-
-        .app {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 25px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-
-        /* ================================
-           CARD
-        ================================= */
-
-        .card {
-
-            width: min(620px, 100%);
-
-            padding: 30px 25px;
-
-            border-radius: 32px;
-
-            background:
-                rgba(255,255,255,0.78);
-
-            border:
-                1px solid rgba(255,255,255,0.9);
-
-            backdrop-filter: blur(20px);
-
-            box-shadow:
-                0 30px 80px
-                rgba(66, 36, 100, 0.15);
-
-            position: relative;
-            z-index: 5;
-        }
-
-
-        /* ================================
-           TOP BAR
-        ================================= */
-
-        .top-bar {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            min-height: 35px;
-
-            margin-bottom: 10px;
-        }
-
-        .progress {
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            color: #7b7088;
-        }
-
-        .sound-button {
-
-            border: none;
-
-            background: white;
-
-            width: 40px;
-
-            height: 40px;
-
-            border-radius: 50%;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 7px 20px
-                rgba(0,0,0,0.08);
-
-            font-size: 18px;
-        }
-
-
-        /* ================================
-           SCREEN
-        ================================= */
-
-        .screen {
-
-            text-align: center;
-
-            animation:
-                screenEnter 0.45s ease;
-        }
-
-        @keyframes screenEnter {
-
-            from {
-                opacity: 0;
-                transform:
-                    translateY(18px)
-                    scale(0.98);
-            }
-
-            to {
-                opacity: 1;
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
-
-        }
-
-
-        /* ================================
-           TYPOGRAPHY
-        ================================= */
-
-        .emoji {
-
-            font-size: 65px;
-
-            margin: 10px 0 20px;
-
-            line-height: 1;
-
-            filter:
-                drop-shadow(
-                    0 10px 12px
-                    rgba(0,0,0,0.12)
-                );
-
-        }
-
-        h1 {
-
-            font-family: "Pacifico", cursive;
-
-            color: #6d28d9;
-
-            font-size:
-                clamp(38px, 10vw, 60px);
-
-            line-height: 1.1;
-
-            margin-bottom: 15px;
-        }
-
-        h2 {
-
-            font-size:
-                clamp(26px, 7vw, 40px);
-
-            line-height: 1.15;
-
-            margin-bottom: 14px;
-        }
-
-        p {
-
-            max-width: 510px;
-
-            margin: 8px auto;
-
-            color: #756a83;
-
-            font-size: 17px;
-
-            line-height: 1.6;
-        }
-
-
-        /* ================================
-           BUTTONS
-        ================================= */
-
-        .buttons {
-
-            display: grid;
-
-            gap: 12px;
-
-            margin-top: 25px;
-        }
-
-        .button {
-
-            border: none;
-
-            border-radius: 17px;
-
-            padding: 16px 18px;
-
-            font-size: 16px;
-
-            font-weight: 800;
-
-            color: white;
-
-            cursor: pointer;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #7c3aed,
-                    #ec4899
-                );
-
-            box-shadow:
-                0 12px 25px
-                rgba(124,58,237,0.22);
-
-            transition:
-                transform 0.18s ease,
-                box-shadow 0.18s ease;
-        }
-
-        .button:hover {
-
-            transform:
-                translateY(-3px);
-
-            box-shadow:
-                0 18px 30px
-                rgba(124,58,237,0.28);
-        }
-
-        .button:active {
-
-            transform:
-                scale(0.97);
-        }
-
-        .button.secondary {
-
-            color: #30263c;
-
-            background: white;
-
-            box-shadow:
-                0 8px 20px
-                rgba(0,0,0,0.07);
-        }
-
-
-        /* ================================
-           CHOICE GRID
-        ================================= */
-
-        .choice-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 12px;
-
-            margin-top: 25px;
-        }
-
-        .choice-grid .button {
-
-            min-height: 75px;
-        }
-
-
-        /* ================================
-           SMALL TEXT
-        ================================= */
-
-        .tiny {
-
-            margin-top: 18px;
-
-            color: #8c8196;
-
-            font-size: 13px;
-        }
-
-
-        /* ================================
-           LOADER
-        ================================= */
-
-        .loader {
-
-            width: 75px;
-
-            height: 75px;
-
-            margin: 25px auto;
-
-            border-radius: 50%;
-
-            border:
-                7px solid #eadfff;
-
-            border-top-color:
-                #7c3aed;
-
-            animation:
-                spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-
-            to {
-                transform: rotate(360deg);
-            }
-
-        }
-
-
-        /* ================================
-           WISH CARD
-        ================================= */
-
-        .wish-card {
-
-            margin-top: 20px;
-
-            padding: 24px;
-
-            text-align: left;
-
-            border-radius: 25px;
-
-            background:
-                rgba(255,255,255,0.7);
-
-            box-shadow:
-                inset 0 0 0 1px
-                rgba(255,255,255,0.7);
-        }
-
-        .wish-card p {
-
-            font-size: 16px;
-
-            margin-bottom: 14px;
-        }
-
-
-        /* ================================
-           HEART
-        ================================= */
-
-        .heart {
-
-            font-size: 50px;
-
-            animation:
-                heartbeat 1s ease-in-out infinite alternate;
-        }
-
-        @keyframes heartbeat {
-
-            to {
-                transform:
-                    scale(1.15);
-            }
-
-        }
-
-
-        /* ================================
-           FINAL SCREEN
-        ================================= */
-
-        .final-title {
-
-            font-size:
-                clamp(34px, 9vw, 55px);
-        }
-
-
-        /* ================================
-           CONFETTI
-        ================================= */
-
-        #confetti-container {
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            z-index: 100;
-        }
-
-        .confetti {
-
-            position: absolute;
-
-            width: 9px;
-
-            height: 15px;
-
-            top: -30px;
-
-            animation:
-                confettiFall
-                linear
-                forwards;
-        }
-
-        @keyframes confettiFall {
-
-            to {
-
-                transform:
-                    translate3d(
-                        var(--moveX),
-                        110vh,
-                        0
-                    )
-                    rotate(720deg);
-
-                opacity: 0;
-            }
-
-        }
-
-
-        /* ================================
-           FLOATING EMOJIS
-        ================================= */
-
-        .floating-emoji {
-
-            position: fixed;
-
-            bottom: -40px;
-
-            font-size: 28px;
-
-            z-index: 1;
-
-            pointer-events: none;
-
-            animation:
-                emojiRise
-                7s
-                linear
-                forwards;
-        }
-
-        @keyframes emojiRise {
-
-            to {
-
-                transform:
-                    translateY(-115vh)
-                    rotate(360deg);
-
-                opacity: 0;
-            }
-
-        }
-
-
-        /* ================================
-           SHAKE
-        ================================= */
-
-        .shake {
-
-            animation:
-                shake 0.4s ease;
-        }
-
-        @keyframes shake {
-
-            25% {
-                transform:
-                    translateX(-6px);
-            }
-
-            50% {
-                transform:
-                    translateX(6px);
-            }
-
-            75% {
-                transform:
-                    translateX(-4px);
-            }
-
-            100% {
-                transform:
-                    translateX(0);
-            }
-
-        }
-
-
-        /* ================================
-           MOBILE
-        ================================= */
-
-        @media(max-width: 450px) {
-
-            .app {
-                padding: 15px;
-            }
-
-            .card {
-
-                padding:
-                    25px 18px;
-
-                border-radius:
-                    27px;
-            }
-
-            .emoji {
-                font-size: 55px;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .choice-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#7c3aed">
+<meta property="og:title" content="A Very Important Message For Sindhu 👀">
+<meta property="og:description" content="Sindhu has been selected for a highly important birthday investigation. 🎂😂">
+<meta property="og:type" content="website">
+<meta name="description" content="A funny interactive birthday surprise for Sindhu.">
+<title>For Sindhu 👀</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    min-height:100vh;
+    font-family:"DM Sans",sans-serif;
+    color:#241b35;
+    background:
+        radial-gradient(circle at 10% 10%,#ffd8e8 0,transparent 30%),
+        radial-gradient(circle at 90% 20%,#ddd2ff 0,transparent 30%),
+        linear-gradient(135deg,#fff8fb,#f5f0ff);
+    overflow-x:hidden;
+}
+
+button{font-family:inherit}
+
+.background-blob{
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(5px);
+    opacity:.55;
+    z-index:0
+}
+
+.blob-one{
+    width:180px;height:180px;
+    background:#ffc9df;
+    top:10%;left:-70px;
+    animation:floatingBlob 8s ease-in-out infinite
+}
+
+.blob-two{
+    width:220px;height:220px;
+    background:#d9ccff;
+    right:-100px;bottom:5%;
+    animation:floatingBlob 10s ease-in-out infinite reverse
+}
+
+@keyframes floatingBlob{
+    50%{transform:translateY(-25px) rotate(10deg)}
+}
+
+.app{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    position:relative;
+    z-index:2
+}
+
+.card{
+    width:min(620px,100%);
+    padding:30px 25px;
+    border-radius:32px;
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(255,255,255,.9);
+    backdrop-filter:blur(20px);
+    box-shadow:0 30px 80px rgba(66,36,100,.15);
+    position:relative;
+    z-index:5
+}
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:35px;
+    margin-bottom:10px
+}
+
+.progress{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#7b7088
+}
+
+.sound-button{
+    border:none;
+    background:white;
+    width:40px;height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 7px 20px rgba(0,0,0,.08);
+    font-size:18px
+}
+
+.screen{
+    text-align:center;
+    animation:screenEnter .45s ease
+}
+
+@keyframes screenEnter{
+    from{opacity:0;transform:translateY(18px) scale(.98)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.emoji{
+    font-size:65px;
+    margin:10px 0 20px;
+    line-height:1;
+    filter:drop-shadow(0 10px 12px rgba(0,0,0,.12))
+}
+
+h1{
+    font-family:"Pacifico",cursive;
+    color:#6d28d9;
+    font-size:clamp(38px,10vw,60px);
+    line-height:1.1;
+    margin-bottom:15px
+}
+
+h2{
+    font-size:clamp(26px,7vw,40px);
+    line-height:1.15;
+    margin-bottom:14px
+}
+
+p{
+    max-width:510px;
+    margin:8px auto;
+    color:#756a83;
+    font-size:17px;
+    line-height:1.6
+}
+
+.buttons{
+    display:grid;
+    gap:12px;
+    margin-top:25px
+}
+
+.button{
+    border:none;
+    border-radius:17px;
+    padding:16px 18px;
+    font-size:16px;
+    font-weight:800;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(135deg,#7c3aed,#ec4899);
+    box-shadow:0 12px 25px rgba(124,58,237,.22);
+    transition:transform .18s ease,box-shadow .18s ease
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 30px rgba(124,58,237,.28)
+}
+
+.button:active{transform:scale(.97)}
+
+.button.secondary{
+    color:#30263c;
+    background:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.07)
+}
+
+.choice-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:25px
+}
+
+.choice-grid .button{min-height:75px}
+
+.tiny{
+    margin-top:18px;
+    color:#8c8196;
+    font-size:13px
+}
+
+.loader{
+    width:75px;height:75px;
+    margin:25px auto;
+    border-radius:50%;
+    border:7px solid #eadfff;
+    border-top-color:#7c3aed;
+    animation:spin .8s linear infinite
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+.wish-card{
+    margin-top:20px;
+    padding:24px;
+    text-align:left;
+    border-radius:25px;
+    background:rgba(255,255,255,.7);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)
+}
+
+.wish-card p{
+    font-size:16px;
+    margin-bottom:14px
+}
+
+.heart{
+    font-size:50px;
+    animation:heartbeat 1s ease-in-out infinite alternate
+}
+
+@keyframes heartbeat{
+    to{transform:scale(1.15)}
+}
+
+/* FINAL PHOTO */
+.final-photo{
+    width:100%;
+    max-width:420px;
+    height:420px;
+    object-fit:cover;
+    border-radius:28px;
+    margin:20px auto;
+    display:block;
+    border:6px solid rgba(255,255,255,.9);
+    box-shadow:0 20px 50px rgba(80,40,120,.22);
+    animation:photoReveal .9s ease both
+}
+
+@keyframes photoReveal{
+    from{
+        opacity:0;
+        transform:scale(.75) rotate(-3deg)
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0)
+    }
+}
+
+/* CONFETTI */
+#confetti-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:100
+}
+
+.confetti{
+    position:absolute;
+    width:9px;
+    height:15px;
+    top:-30px;
+    animation:confettiFall linear forwards
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translate3d(var(--moveX),110vh,0) rotate(720deg);
+        opacity:0
+    }
+}
+
+/* FLOATING EMOJIS */
+.floating-emoji{
+    position:fixed;
+    bottom:-40px;
+    font-size:28px;
+    z-index:1;
+    pointer-events:none;
+    animation:emojiRise 7s linear forwards
+}
+
+@keyframes emojiRise{
+    to{
+        transform:translateY(-115vh) rotate(360deg);
+        opacity:0
+    }
+}
+
+/* SHAKE */
+.shake{animation:shake .4s ease}
+
+@keyframes shake{
+    25%{transform:translateX(-6px)}
+    50%{transform:translateX(6px)}
+    75%{transform:translateX(-4px)}
+    100%{transform:translateX(0)}
+}
+
+@media(max-width:450px){
+    .app{padding:15px}
+    .card{padding:25px 18px;border-radius:27px}
+    .emoji{font-size:55px}
+    p{font-size:16px}
+    .choice-grid{grid-template-columns:1fr}
+    .final-photo{height:350px}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Background -->
-    <div class="background-blob blob-one"></div>
-    <div class="background-blob blob-two"></div>
+<div class="background-blob blob-one"></div>
+<div class="background-blob blob-two"></div>
 
+<div class="app">
+    <main class="card" id="card">
 
-    <div class="app">
+        <div class="top-bar">
+            <div class="progress" id="progress"></div>
 
-        <main class="card" id="card">
+            <button
+                class="sound-button"
+                id="soundButton"
+                onclick="toggleSound()">
+                🔇
+            </button>
+        </div>
 
-            <div class="top-bar">
+        <section class="screen" id="screen"></section>
 
-                <div
-                    class="progress"
-                    id="progress">
-                </div>
+    </main>
+</div>
 
-                <button
-                    class="sound-button"
-                    id="soundButton"
-                    onclick="toggleSound()">
-
-                    🔇
-
-                </button>
-
-            </div>
-
-
-            <section
-                class="screen"
-                id="screen">
-
-            </section>
-
-        </main>
-
-    </div>
-
-
-    <!-- Confetti -->
-    <div id="confetti-container"></div>
-
+<div id="confetti-container"></div>
 
 <script>
 
-    /* ==================================================
-       GLOBAL VARIABLES
-    ================================================== */
+/* =========================
+   GLOBALS
+========================= */
 
-    const screen =
-        document.getElementById("screen");
+const screen = document.getElementById("screen");
+const progress = document.getElementById("progress");
+const card = document.getElementById("card");
+const soundButton = document.getElementById("soundButton");
 
-    const progress =
-        document.getElementById("progress");
+let soundEnabled = false;
+let audioContext = null;
 
-    const card =
-        document.getElementById("card");
 
-    const soundButton =
-        document.getElementById("soundButton");
+/* =========================
+   SCREEN RENDER
+========================= */
 
-    let soundEnabled = false;
+function render(content, progressText = "") {
 
-    let audioContext = null;
+    progress.textContent = progressText;
 
+    screen.innerHTML = content;
 
-    /* ==================================================
-       SCREEN RENDERER
-    ================================================== */
+    screen.className = "screen";
 
-    function render(content, progressText = "") {
+    void screen.offsetWidth;
 
-        progress.textContent =
-            progressText;
+    screen.classList.add("screen");
+}
 
-        screen.innerHTML =
-            content;
 
-        screen.className =
-            "screen";
+/* =========================
+   FLOATING EMOJIS
+========================= */
 
-        void screen.offsetWidth;
+const floatingEmojis = [
+    "✨",
+    "🎈",
+    "😂",
+    "💜",
+    "🎂",
+    "💕",
+    "⭐"
+];
 
-        screen.classList.add(
-            "screen"
-        );
+function createFloatingEmoji() {
 
-    }
+    if (Math.random() > 0.75) return;
 
+    const emoji = document.createElement("div");
 
-    /* ==================================================
-       FLOATING EMOJIS
-    ================================================== */
+    emoji.className = "floating-emoji";
 
-    const floatingEmojis = [
-        "✨",
-        "🎈",
-        "😂",
-        "💜",
-        "🎂",
-        "💕",
-        "⭐"
-    ];
-
-
-    function createFloatingEmoji() {
-
-        if (Math.random() > 0.75)
-            return;
-
-        const emoji =
-            document.createElement("div");
-
-        emoji.className =
-            "floating-emoji";
-
-        emoji.textContent =
-            floatingEmojis[
-                Math.floor(
-                    Math.random()
-                    *
-                    floatingEmojis.length
-                )
-            ];
-
-        emoji.style.left =
-            (Math.random() * 90 + 5)
-            + "vw";
-
-        document.body.appendChild(
-            emoji
-        );
-
-        setTimeout(() => {
-
-            emoji.remove();
-
-        }, 7000);
-
-    }
-
-
-    setInterval(
-        createFloatingEmoji,
-        2200
-    );
-
-
-    /* ==================================================
-       OPENING
-    ================================================== */
-
-    function opening() {
-
-        render(`
-
-            <div class="emoji">
-                👀
-            </div>
-
-            <h1>
-                Hi Sindhu Akka
-            </h1>
-
-            <p>
-                So... you thought you were
-                getting a normal birthday wish?
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="intro()">
-
-                    YES 😌
-
-                </button>
-
-            </div>
-
-            <div class="tiny">
-
-                ⚠️ This website has absolutely
-                no useful purpose.
-
-            </div>
-
-        `);
-
-    }
-
-
-    /* ==================================================
-       INTRO
-    ================================================== */
-
-    function intro() {
-
-        render(`
-
-            <div class="emoji">
-                😂
-            </div>
-
-            <h2>
-                HAHA. Too easy.
-            </h2>
-
-            <p>
-
-                Before you get your birthday wish,
-                you have to pass a few
-                <b>very important tests.</b>
-
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="challengeOne()">
-
-                    Okay, let's do this 😤
-
-                </button>
-
-            </div>
-
-        `);
-
-    }
-
-
-    /* ==================================================
-       CHALLENGE 1
-    ================================================== */
-
-    function challengeOne() {
-
-        render(`
-
-            <div class="emoji">
-                🎯
-            </div>
-
-            <h2>
-                The Suspense Test
-            </h2>
-
-            <p>
-                How excited are you
-                for your birthday wish?
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="
-                        suspenseAnswer(
-                            'That\\'s cute. But you\\'re still not getting it. 😌'
-                        )
-                    ">
-
-                    Very excited 😍
-
-                </button>
-
-
-                <button
-                    class="button"
-                    onclick="
-                        suspenseAnswer(
-                            'Calm down birthday girl 😂'
-                        )
-                    ">
-
-                    Extremely excited 🤩
-
-                </button>
-
-
-                <button
-                    class="button"
-                    onclick="
-                        suspenseAnswer(
-                            'Someone\\'s getting impatient 👀'
-                        )
-                    ">
-
-                    Just give me the wish already 😑
-
-                </button>
-
-            </div>
-
-        `, "Challenge 1 / 5");
-
-    }
-
-
-    function suspenseAnswer(message) {
-
-        render(`
-
-            <div class="emoji">
-                😏
-            </div>
-
-            <h2>
-                Interesting...
-            </h2>
-
-            <p>
-                ${message}
-            </p>
-
-            <p class="tiny">
-
-                1/5 challenges completed.
-                Somehow.
-
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="challengeTwo()">
-
-                    Continue 😤
-
-                </button>
-
-            </div>
-
-        `, "Challenge 1 / 5");
-
-    }
-
-
-    /* ==================================================
-       CHALLENGE 2
-    ================================================== */
-
-    function challengeTwo() {
-
-        render(`
-
-            <div class="emoji">
-                🎁
-            </div>
-
-            <h2>
-                Surely THIS is it.
-            </h2>
-
-            <p>
-
-                Click the button.
-                Your birthday wish is
-                definitely here.
-
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="fakeWish()">
-
-                    🎁 CLICK HERE FOR
-                    YOUR BIRTHDAY WISH
-
-                </button>
-
-            </div>
-
-        `, "Challenge 2 / 5");
-
-    }
-
-
-    /* ==================================================
-       FAKE WISH
-    ================================================== */
-
-    function fakeWish() {
-
-        render(`
-
-            <div class="emoji">
-                🤖
-            </div>
-
-            <h2>
-                Processing...
-            </h2>
-
-            <div class="loader"></div>
-
-            <p id="loadingText">
-
-                Preparing your special
-                birthday wish...
-
-            </p>
-
-        `, "Challenge 2 / 5");
-
-
-        const messages = [
-
-            "Preparing your special birthday wish...",
-
-            "Calculating how annoying you are...",
-
-            "Checking birthday privileges...",
-
-            "Searching for something nice to say...",
-
-            "Analyzing sister database...",
-
-            "ERROR 404: Compliment not found 😂"
-
+    emoji.textContent =
+        floatingEmojis[
+            Math.floor(
+                Math.random() *
+                floatingEmojis.length
+            )
         ];
 
+    emoji.style.left =
+        (Math.random() * 90 + 5) + "vw";
 
-        let index = 0;
+    document.body.appendChild(emoji);
 
+    setTimeout(() => {
+        emoji.remove();
+    }, 7000);
+}
 
-        const interval =
-            setInterval(() => {
+setInterval(createFloatingEmoji, 2200);
 
-                const text =
-                    document.getElementById(
-                        "loadingText"
-                    );
 
-                if (!text) {
+/* =========================
+   OPENING
+========================= */
 
-                    clearInterval(interval);
-                    return;
+function opening() {
 
-                }
+    render(`
 
+        <div class="emoji">
+            👀
+        </div>
 
-                text.textContent =
-                    messages[index];
+        <h1>
+            Hey Sindhu
+        </h1>
 
+        <p>
+            So... you thought you were
+            getting a normal birthday wish?
+        </p>
 
-                index++;
+        <div class="buttons">
 
+            <button
+                class="button"
+                onclick="intro()">
 
-                if (index >= messages.length) {
+                YES 😌
 
-                    clearInterval(interval);
+            </button>
 
-                    setTimeout(
-                        fakeWishResult,
-                        700
-                    );
+        </div>
 
-                }
+        <div class="tiny">
+            ⚠️ This website has absolutely
+            no useful purpose.
+        </div>
 
-            }, 750);
+    `);
+}
 
-    }
 
+/* =========================
+   INTRO
+========================= */
 
-    function fakeWishResult() {
+function intro() {
 
-        render(`
+    render(`
 
-            <div class="emoji">
-                😂
-            </div>
+        <div class="emoji">
+            😂
+        </div>
 
-            <h2>
-                ERROR 404
-            </h2>
+        <h2>
+            HAHA. Too easy.
+        </h2>
 
-            <p>
-                Compliment not found.
-            </p>
+        <p>
+            Before you get your birthday wish,
+            you have to pass a few
+            <b>very important tests.</b>
+        </p>
 
-            <p>
-                Okay okay...
-                maybe later.
-            </p>
+        <div class="buttons">
 
-            <div class="buttons">
+            <button
+                class="button"
+                onclick="challengeOne()">
 
-                <button
-                    class="button"
-                    onclick="challengeThree()">
+                Okay, let's do this 😤
 
-                    😑 Seriously?
+            </button>
 
-                </button>
+        </div>
 
-            </div>
+    `);
+}
 
-        `, "Challenge 2 / 5");
 
-    }
+/* =========================
+   CHALLENGE 1
+========================= */
 
+function challengeOne() {
 
-    /* ==================================================
-       CHALLENGE 3
-    ================================================== */
+    render(`
 
-    function challengeThree() {
+        <div class="emoji">
+            🎯
+        </div>
 
-        render(`
+        <h2>
+            The Suspense Test
+        </h2>
 
-            <div class="emoji">
-                🎁
-            </div>
+        <p>
+            How excited are you
+            for your birthday wish?
+        </p>
 
-            <h2>
-                Choose your birthday gift
-            </h2>
+        <div class="buttons">
 
-            <p>
+            <button
+                class="button"
+                onclick="suspenseAnswer('That\\'s cute. But you\\'re still not getting it. 😌')">
 
-                Choose wisely.
-                Your brother's imaginary
-                budget is watching.
+                Very excited 😍
 
-            </p>
+            </button>
 
+            <button
+                class="button"
+                onclick="suspenseAnswer('Calm down birthday girl 😂')">
 
-            <div class="choice-grid">
+                Extremely excited 🤩
 
-                <button
-                    class="button secondary"
-                    onclick="giftAnswer()">
+            </button>
 
-                    💰 Unlimited Money
+            <button
+                class="button"
+                onclick="suspenseAnswer('Someone\\'s getting impatient 👀')">
 
-                </button>
+                Just give me the wish already 😑
 
+            </button>
 
-                <button
-                    class="button secondary"
-                    onclick="giftAnswer()">
+        </div>
 
-                    ✈️ Unlimited Trips
+    `, "Challenge 1 / 5");
+}
 
-                </button>
 
+function suspenseAnswer(message) {
 
-                <button
-                    class="button secondary"
-                    onclick="giftAnswer()">
+    render(`
 
-                    🍕 Unlimited Food
+        <div class="emoji">
+            😏
+        </div>
 
-                </button>
+        <h2>
+            Interesting...
+        </h2>
 
+        <p>
+            ${message}
+        </p>
 
-                <button
-                    class="button secondary"
-                    onclick="giftAnswer()">
+        <p class="tiny">
+            1/5 challenges completed.
+            Somehow.
+        </p>
 
-                    😌 Peace & Happiness
+        <div class="buttons">
 
-                </button>
+            <button
+                class="button"
+                onclick="challengeTwo()">
 
-            </div>
+                Continue 😤
 
-        `, "Challenge 3 / 5");
+            </button>
 
-    }
+        </div>
 
+    `, "Challenge 1 / 5");
+}
 
-    function giftAnswer() {
 
-        render(`
+/* =========================
+   CHALLENGE 2
+========================= */
 
-            <div class="emoji">
-                💸
-            </div>
+function challengeTwo() {
 
-            <h2>
-                Excellent choice.
-            </h2>
+    render(`
 
-            <p>
+        <div class="emoji">
+            🎁
+        </div>
 
-                Unfortunately, your brother's
-                bank account doesn't support
-                this feature. 😂
+        <h2>
+            Surely THIS is it.
+        </h2>
 
-            </p>
+        <p>
+            Click the button.
+            Your birthday wish is
+            definitely here.
+        </p>
 
-            <div class="buttons">
+        <div class="buttons">
 
-                <button
-                    class="button"
-                    onclick="challengeFour()">
+            <button
+                class="button"
+                onclick="fakeWish()">
 
-                    Fine. Continue 🙄
+                🎁 CLICK HERE FOR
+                YOUR BIRTHDAY WISH
 
-                </button>
+            </button>
 
-            </div>
+        </div>
 
-        `, "Challenge 3 / 5");
+    `, "Challenge 2 / 5");
+}
 
-    }
 
+/* =========================
+   FAKE WISH
+========================= */
 
-    /* ==================================================
-       CHALLENGE 4
-    ================================================== */
+function fakeWish() {
 
-    function challengeFour() {
+    render(`
 
-        render(`
+        <div class="emoji">
+            🤖
+        </div>
 
-            <div class="emoji">
-                🧠
-            </div>
+        <h2>
+            Processing...
+        </h2>
 
-            <h2>
-                Important question.
-            </h2>
+        <div class="loader"></div>
 
-            <p>
-                <b>
-                    Who is the best sibling?
-                </b>
-            </p>
+        <p id="loadingText">
+            Preparing your special
+            birthday wish...
+        </p>
 
-            <div class="buttons">
+    `, "Challenge 2 / 5");
 
-                <button
-                    class="button"
-                    onclick="
-                        siblingAnswer('me')
-                    ">
 
-                    Me 😌
+    const messages = [
 
-                </button>
+        "Preparing your special birthday wish...",
+        "Calculating how annoying you are...",
+        "Checking birthday privileges...",
+        "Searching for something nice to say...",
+        "Analyzing sister database...",
+        "ERROR 404: Compliment not found 😂"
 
+    ];
 
-                <button
-                    class="button"
-                    onclick="
-                        siblingAnswer('me')
-                    ">
+    let index = 0;
 
-                    Obviously Me 😎
+    const interval = setInterval(() => {
 
-                </button>
-
-
-                <button
-                    class="button"
-                    onclick="
-                        siblingAnswer('you')
-                    ">
-
-                    You, I guess 🙄
-
-                </button>
-
-            </div>
-
-        `, "Challenge 4 / 5");
-
-    }
-
-
-    function siblingAnswer(answer) {
-
-        let message;
-
-        if (answer === "me") {
-
-            message =
-                "Finally! Someone with excellent taste. 😎";
-
-        } else {
-
-            message =
-                "Wrong answer. But I'll allow it because it's your birthday. 😂";
-
-        }
-
-
-        render(`
-
-            <div class="emoji">
-                🏆
-            </div>
-
-            <h2>
-                Results are in...
-            </h2>
-
-            <p>
-                ${message}
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="challengeFive()">
-
-                    Okay... I'm getting closer 👀
-
-                </button>
-
-            </div>
-
-        `, "Challenge 4 / 5");
-
-    }
-
-
-    /* ==================================================
-       CHALLENGE 5
-    ================================================== */
-
-    function challengeFive() {
-
-        render(`
-
-            <div class="emoji">
-                🔬
-            </div>
-
-            <h2>
-                Alright Akka...
-            </h2>
-
-            <p>
-
-                After extensive research,
-                17 highly qualified imaginary
-                scientists have agreed...
-
-            </p>
-
-            <p>
-
-                <b>
-                    You have officially earned
-                    your birthday wish.
-                </b>
-
-            </p>
-
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="fakeoutOne()">
-
-                    🎂 GET MY WISH
-
-                </button>
-
-            </div>
-
-        `, "Challenge 5 / 5");
-
-    }
-
-
-    /* ==================================================
-       FINAL FAKEOUT 1
-    ================================================== */
-
-    function fakeoutOne() {
-
-        render(`
-
-            <div class="emoji">
-                😈
-            </div>
-
-            <h2>
-                Are you sure?
-            </h2>
-
-            <p>
-
-                This decision cannot be undone.
-
-                <br>
-
-                Probably.
-
-            </p>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="fakeoutTwo()">
-
-                    YES
-
-                </button>
-
-            </div>
-
-        `, "Final Fakeout");
-
-    }
-
-
-    /* ==================================================
-       FINAL FAKEOUT 2
-    ================================================== */
-
-    function fakeoutTwo() {
-
-        render(`
-
-            <div class="emoji">
-                👀
-            </div>
-
-            <h2>
-                Like... REALLY sure?
-            </h2>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="fakeoutThree()">
-
-                    YESSS 😭
-
-                </button>
-
-            </div>
-
-        `, "Final Fakeout");
-
-    }
-
-
-    /* ==================================================
-       FINAL FAKEOUT 3
-    ================================================== */
-
-    function fakeoutThree() {
-
-        render(`
-
-            <div class="emoji">
-                🎂
-            </div>
-
-            <h2>
-                Last chance to turn back.
-            </h2>
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="revealBirthday()">
-
-                    Give me the wish ❤️
-
-                </button>
-
-
-                <button
-                    class="button secondary"
-                    onclick="waitMore()">
-
-                    Okay I'll wait 😭
-
-                </button>
-
-            </div>
-
-        `, "Final Fakeout");
-
-    }
-
-
-    /* ==================================================
-       WAIT BUTTON
-    ================================================== */
-
-    function waitMore() {
-
-        card.classList.add("shake");
-
-        setTimeout(() => {
-
-            card.classList.remove(
-                "shake"
-            );
-
-            alert(
-                "Nice try. 😂\n\nNow click the other button! ❤️"
-            );
-
-        }, 400);
-
-    }
-
-
-    /* ==================================================
-       FINAL BIRTHDAY REVEAL
-    ================================================== */
-
-    function revealBirthday() {
-
-        render(`
-
-            <div class="heart">
-                ❤️
-            </div>
-
-            <h1 class="final-title">
-
-                🎂 HAPPY BIRTHDAY,
-                SINDHU Akka! ❤️
-
-            </h1>
-
-
-            <div class="wish-card">
-
-                <p>
-                    Okay, enough teasing. 😂
-                </p>
-
-
-                <p>
-                    <b>
-                        Happy Birthday, Akka! ❤️
-                    </b>
-                </p>
-
-
-                <p>
-
-                    I genuinely wish that this year
-                    brings you lots of happiness,
-                    peace, success, and all the
-                    good things you've been waiting for.
-
-                </p>
-
-
-                <p>
-
-                    Sorry for irritating you,
-                    annoying you all the time. 😅
-
-                </p>
-
-
-                <p>
-
-                    No matter how much I annoy you,
-                    you're always special to me.
-
-                </p>
-
-
-                <p>
-
-                    I hope this birthday marks the
-                    beginning of an amazing year
-                    filled with beautiful moments,
-                    unforgettable memories, and
-                    everything you deserve.
-
-                </p>
-
-
-                <p>
-
-                    Stay happy, keep smiling,
-                    and enjoy your day! ❤️
-
-                </p>
-
-
-                <p>
-
-                    <b>
-                        Once again...
-                        🎉 HAPPY BIRTHDAY,
-                        AKKA! 🎉
-                    </b>
-
-                </p>
-
-            </div>
-
-
-            <div class="buttons">
-
-                <button
-                    class="button"
-                    onclick="celebrate()">
-
-                    🎉 Celebrate!
-
-                </button>
-
-
-                <button
-                    class="button secondary"
-                    onclick="restart()">
-
-                    🔄 Replay the madness
-
-                </button>
-
-            </div>
-
-
-            <div
-                class="tiny"
-                id="finalMessage"
-                style="display:none">
-
-                <b>
-                    Okay, birthday wish delivered
-                    successfully. ✅
-                </b>
-
-                <br>
-
-                You may now stop complaining. 😂❤️
-
-            </div>
-
-        `, "MISSION COMPLETE");
-
-
-        launchConfetti(150);
-
-        playSound(660);
-
-        setTimeout(() => {
-
-            playSound(880);
-
-        }, 180);
-
-    }
-
-
-    /* ==================================================
-       CELEBRATE
-    ================================================== */
-
-    function celebrate() {
-
-        launchConfetti(300);
-
-        playSound(880);
-
-        setTimeout(() => {
-
-            playSound(1175);
-
-        }, 150);
-
-
-        setTimeout(() => {
-
-            const message =
-                document.getElementById(
-                    "finalMessage"
-                );
-
-            if (message) {
-
-                message.style.display =
-                    "block";
-
-            }
-
-        }, 500);
-
-    }
-
-
-    /* ==================================================
-       CONFETTI
-    ================================================== */
-
-    function launchConfetti(amount) {
-
-        const container =
+        const text =
             document.getElementById(
-                "confetti-container"
+                "loadingText"
             );
 
-
-        container.innerHTML = "";
-
-
-        for (
-            let i = 0;
-            i < amount;
-            i++
-        ) {
-
-            const piece =
-                document.createElement("div");
-
-
-            piece.className =
-                "confetti";
-
-
-            piece.style.left =
-                Math.random() * 100 +
-                "vw";
-
-
-            piece.style.setProperty(
-                "--moveX",
-                (Math.random() * 300 - 150)
-                + "px"
-            );
-
-
-            piece.style.background =
-                `hsl(
-                    ${Math.random() * 360},
-                    85%,
-                    60%
-                )`;
-
-
-            piece.style.animationDuration =
-                (2.5 +
-                Math.random() * 3)
-                + "s";
-
-
-            piece.style.animationDelay =
-                Math.random()
-                * 0.7
-                + "s";
-
-
-            piece.style.transform =
-                `rotate(
-                    ${Math.random() * 360}deg
-                )`;
-
-
-            container.appendChild(
-                piece
-            );
-
-        }
-
-
-        setTimeout(() => {
-
-            container.innerHTML = "";
-
-        }, 7000);
-
-    }
-
-
-    /* ==================================================
-       SOUND
-    ================================================== */
-
-    function toggleSound() {
-
-        soundEnabled =
-            !soundEnabled;
-
-
-        soundButton.textContent =
-            soundEnabled
-                ? "🔊"
-                : "🔇";
-
-
-        if (soundEnabled) {
-
-            playSound(660);
-
-        }
-
-    }
-
-
-    function playSound(frequency) {
-
-        if (!soundEnabled)
+        if (!text) {
+            clearInterval(interval);
             return;
-
-
-        if (!audioContext) {
-
-            audioContext =
-                new (
-                    window.AudioContext ||
-                    window.webkitAudioContext
-                )();
-
         }
 
+        text.textContent =
+            messages[index++];
 
-        const oscillator =
-            audioContext.createOscillator();
+        if (index >= messages.length) {
+
+            clearInterval(interval);
+
+            setTimeout(
+                fakeWishResult,
+                700
+            );
+        }
+
+    }, 750);
+}
 
 
-        const gain =
-            audioContext.createGain();
+function fakeWishResult() {
+
+    render(`
+
+        <div class="emoji">
+            😂
+        </div>
+
+        <h2>
+            ERROR 404
+        </h2>
+
+        <p>
+            Compliment not found.
+        </p>
+
+        <p>
+            Okay okay...
+            maybe later.
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="challengeThree()">
+
+                😑 Seriously?
+
+            </button>
+
+        </div>
+
+    `, "Challenge 2 / 5");
+}
 
 
-        oscillator.frequency.value =
-            frequency;
+/* =========================
+   CHALLENGE 3
+========================= */
+
+function challengeThree() {
+
+    render(`
+
+        <div class="emoji">
+            🎁
+        </div>
+
+        <h2>
+            Choose your birthday gift
+        </h2>
+
+        <p>
+            Choose wisely.
+            Your brother's imaginary
+            budget is watching.
+        </p>
+
+        <div class="choice-grid">
+
+            <button
+                class="button secondary"
+                onclick="giftAnswer()">
+
+                💰 Unlimited Money
+
+            </button>
+
+            <button
+                class="button secondary"
+                onclick="giftAnswer()">
+
+                ✈️ Unlimited Trips
+
+            </button>
+
+            <button
+                class="button secondary"
+                onclick="giftAnswer()">
+
+                🍕 Unlimited Food
+
+            </button>
+
+            <button
+                class="button secondary"
+                onclick="giftAnswer()">
+
+                😌 Peace & Happiness
+
+            </button>
+
+        </div>
+
+    `, "Challenge 3 / 5");
+}
 
 
-        oscillator.type =
-            "sine";
+function giftAnswer() {
+
+    render(`
+
+        <div class="emoji">
+            💸
+        </div>
+
+        <h2>
+            Excellent choice.
+        </h2>
+
+        <p>
+            Unfortunately, your brother's
+            bank account doesn't support
+            this feature. 😂
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="challengeFour()">
+
+                Fine. Continue 🙄
+
+            </button>
+
+        </div>
+
+    `, "Challenge 3 / 5");
+}
 
 
-        gain.gain.setValueAtTime(
-            0.001,
-            audioContext.currentTime
+/* =========================
+   CHALLENGE 4
+========================= */
+
+function challengeFour() {
+
+    render(`
+
+        <div class="emoji">
+            🧠
+        </div>
+
+        <h2>
+            Important question.
+        </h2>
+
+        <p>
+            <b>
+                Who is the best sibling?
+            </b>
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="siblingAnswer('me')">
+
+                Me 😌
+
+            </button>
+
+            <button
+                class="button"
+                onclick="siblingAnswer('me')">
+
+                Obviously Me 😎
+
+            </button>
+
+            <button
+                class="button"
+                onclick="siblingAnswer('you')">
+
+                You, I guess 🙄
+
+            </button>
+
+        </div>
+
+    `, "Challenge 4 / 5");
+}
+
+
+function siblingAnswer(answer) {
+
+    const message =
+        answer === "me"
+            ? "Finally! Someone with excellent taste. 😎"
+            : "Wrong answer. But I'll allow it because it's your birthday. 😂";
+
+    render(`
+
+        <div class="emoji">
+            🏆
+        </div>
+
+        <h2>
+            Results are in...
+        </h2>
+
+        <p>
+            ${message}
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="challengeFive()">
+
+                Okay... I'm getting closer 👀
+
+            </button>
+
+        </div>
+
+    `, "Challenge 4 / 5");
+}
+
+
+/* =========================
+   CHALLENGE 5
+========================= */
+
+function challengeFive() {
+
+    render(`
+
+        <div class="emoji">
+            🔬
+        </div>
+
+        <h2>
+            Alright Sindhu...
+        </h2>
+
+        <p>
+            After extensive research,
+            17 highly qualified imaginary
+            scientists have agreed...
+        </p>
+
+        <p>
+            <b>
+                You have officially earned
+                your birthday wish.
+            </b>
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="fakeoutOne()">
+
+                🎂 GET MY WISH
+
+            </button>
+
+        </div>
+
+    `, "Challenge 5 / 5");
+}
+
+
+/* =========================
+   FINAL FAKEOUT
+========================= */
+
+function fakeoutOne() {
+
+    render(`
+
+        <div class="emoji">
+            😈
+        </div>
+
+        <h2>
+            Are you sure?
+        </h2>
+
+        <p>
+            This decision cannot be undone.
+            <br>
+            Probably.
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="fakeoutTwo()">
+
+                YES
+
+            </button>
+
+        </div>
+
+    `, "Final Fakeout");
+}
+
+
+function fakeoutTwo() {
+
+    render(`
+
+        <div class="emoji">
+            👀
+        </div>
+
+        <h2>
+            Like... REALLY sure?
+        </h2>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="fakeoutThree()">
+
+                YESSS 😭
+
+            </button>
+
+        </div>
+
+    `, "Final Fakeout");
+}
+
+
+function fakeoutThree() {
+
+    render(`
+
+        <div class="emoji">
+            🎂
+        </div>
+
+        <h2>
+            Last chance to turn back.
+        </h2>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="revealBirthday()">
+
+                Give me the wish ❤️
+
+            </button>
+
+            <button
+                class="button secondary"
+                onclick="waitMore()">
+
+                Okay I'll wait 😭
+
+            </button>
+
+        </div>
+
+    `, "Final Fakeout");
+}
+
+
+function waitMore() {
+
+    card.classList.add("shake");
+
+    setTimeout(() => {
+
+        card.classList.remove("shake");
+
+        alert(
+            "Nice try. 😂\n\nNow click the other button! ❤️"
         );
 
-
-        gain.gain.exponentialRampToValueAtTime(
-            0.08,
-            audioContext.currentTime + 0.03
-        );
+    }, 400);
+}
 
 
-        gain.gain.exponentialRampToValueAtTime(
-            0.001,
-            audioContext.currentTime + 0.2
-        );
+/* =========================
+   FINAL BIRTHDAY REVEAL
+========================= */
+
+function revealBirthday() {
+
+    render(`
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h1 class="final-title">
+            🎂 HAPPY BIRTHDAY,
+            SINDHU! ❤️
+        </h1>
+
+        <!--
+            IMPORTANT:
+            Put your photo here:
+            Akka.jpeg
+        -->
+
+        <img
+            src="Akka.jpeg"
+            alt="Birthday memory of Sindhu"
+            class="final-photo"
+            onerror="this.style.display='none'; document.getElementById('photoError').style.display='block';"
+        >
+
+        <div
+            id="photoError"
+            class="tiny"
+            style="display:none">
+
+            📸 Add your photo as
+            <b>Akka.jpeg</b>
+            to show it here.
+
+        </div>
+
+        <div class="wish-card">
+
+            <p>
+                Okay, enough teasing. 😂
+            </p>
+
+            <p>
+                <b>
+                    Happy Birthday, Akka! ❤️
+                </b>
+            </p>
+
+            <p>
+                I genuinely wish that this year
+                brings you lots of happiness,
+                peace, success, and all the
+                good things you've been waiting for.
+            </p>
+
+            <p>
+                Sorry for irritating you,
+                annoying you, and pulling your
+                leg all the time. 😅
+            </p>
+
+            <p>
+                No matter how much I tease you,
+                you're always special to me.
+            </p>
+
+            <p>
+                I hope this birthday marks the
+                beginning of an amazing year
+                filled with beautiful moments,
+                unforgettable memories, and
+                everything you deserve.
+            </p>
+
+            <p>
+                Stay happy, keep smiling,
+                and enjoy your day! ❤️
+            </p>
+
+            <p>
+                <b>
+                    Once again...
+                    🎉 HAPPY BIRTHDAY,
+                    AKKA! 🎉
+                </b>
+            </p>
+
+        </div>
+
+        <div class="buttons">
+
+            <button
+                class="button"
+                onclick="celebrate()">
+
+                🎉 Celebrate!
+
+            </button>
+
+            <button
+                class="button secondary"
+                onclick="restart()">
+
+                🔄 Replay the madness
+
+            </button>
+
+        </div>
+
+        <div
+            class="tiny"
+            id="finalMessage"
+            style="display:none">
+
+            <b>
+                Okay, birthday wish delivered
+                successfully. ✅
+            </b>
+
+            <br>
+
+            You may now stop complaining. 😂❤️
+
+        </div>
+
+    `, "MISSION COMPLETE");
+
+    launchConfetti(150);
+
+    playSound(660);
+
+    setTimeout(() => {
+        playSound(880);
+    }, 180);
+}
 
 
-        oscillator
-            .connect(gain)
-            .connect(
-                audioContext.destination
+/* =========================
+   CELEBRATE
+========================= */
+
+function celebrate() {
+
+    launchConfetti(300);
+
+    playSound(880);
+
+    setTimeout(() => {
+        playSound(1175);
+    }, 150);
+
+    setTimeout(() => {
+
+        const message =
+            document.getElementById(
+                "finalMessage"
             );
 
+        if (message) {
+            message.style.display = "block";
+        }
 
-        oscillator.start();
+    }, 500);
+}
 
 
-        oscillator.stop(
-            audioContext.currentTime + 0.2
+/* =========================
+   CONFETTI
+========================= */
+
+function launchConfetti(amount) {
+
+    const container =
+        document.getElementById(
+            "confetti-container"
         );
 
+    container.innerHTML = "";
+
+    for (let i = 0; i < amount; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.setProperty(
+            "--moveX",
+            (Math.random() * 300 - 150) + "px"
+        );
+
+        piece.style.background =
+            `hsl(
+                ${Math.random() * 360},
+                85%,
+                60%
+            )`;
+
+        piece.style.animationDuration =
+            (2.5 + Math.random() * 3) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * .7 + "s";
+
+        piece.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+        container.appendChild(piece);
     }
 
+    setTimeout(() => {
+        container.innerHTML = "";
+    }, 7000);
+}
 
-    /* ==================================================
-       RESTART
-    ================================================== */
 
-    function restart() {
+/* =========================
+   SOUND
+========================= */
 
-        location.reload();
+function toggleSound() {
 
+    soundEnabled = !soundEnabled;
+
+    soundButton.textContent =
+        soundEnabled ? "🔊" : "🔇";
+
+    if (soundEnabled) {
+        playSound(660);
+    }
+}
+
+
+function playSound(frequency) {
+
+    if (!soundEnabled) return;
+
+    if (!audioContext) {
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
     }
 
+    const oscillator =
+        audioContext.createOscillator();
 
-    /* ==================================================
-       START WEBSITE
-    ================================================== */
+    const gain =
+        audioContext.createGain();
 
-    opening();
+    oscillator.frequency.value =
+        frequency;
 
+    oscillator.type = "sine";
+
+    gain.gain.setValueAtTime(
+        .001,
+        audioContext.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        .08,
+        audioContext.currentTime + .03
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        audioContext.currentTime + .2
+    );
+
+    oscillator
+        .connect(gain)
+        .connect(
+            audioContext.destination
+        );
+
+    oscillator.start();
+
+    oscillator.stop(
+        audioContext.currentTime + .2
+    );
+}
+
+
+/* =========================
+   REPLAY
+========================= */
+
+function restart() {
+    location.reload();
+}
+
+
+/* =========================
+   START
+========================= */
+
+opening();
 
 </script>
 
